@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/kamilsk/go-kit/src/breaker"
+	"github.com/kamilsk/go-kit/pkg/breaker"
 )
 
 func TestWithContext(t *testing.T) {

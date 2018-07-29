@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/kamilsk/go-kit/src/breaker"
+	"github.com/kamilsk/go-kit/pkg/breaker"
 )
 
 func TestMultiplex(t *testing.T) {
