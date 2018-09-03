@@ -19,7 +19,7 @@ func TestSecret_Printing(t *testing.T) {
 	}
 	secret := password{Value: "secret"}
 
-	testCases := []struct {
+	tests := []struct {
 		name    string
 		marshal func(password) ([]byte, error)
 	}{
@@ -42,7 +42,7 @@ func TestSecret_Printing(t *testing.T) {
 		}},
 	}
 
-	for _, test := range testCases {
+	for _, test := range tests {
 		tc := test
 		t.Run(test.name, func(t *testing.T) {
 			raw, err := tc.marshal(secret)

@@ -9,7 +9,7 @@ import (
 )
 
 func TestMust(t *testing.T) {
-	testCases := []struct {
+	tests := []struct {
 		name     string
 		actions  []func() error
 		panicked bool
@@ -34,7 +34,7 @@ func TestMust(t *testing.T) {
 		},
 	}
 
-	for _, test := range testCases {
+	for _, test := range tests {
 		tc := test
 		t.Run(test.name, func(t *testing.T) {
 			var check = assert.NotPanics
