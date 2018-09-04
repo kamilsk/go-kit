@@ -1,7 +1,7 @@
 > # go-kit [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Kit%20written%20on%20Go&url=https://github.com/kamilsk/go-kit&via=ikamilsk&hashtags=go,kit,tools)
 > [![Analytics](https://ga-beacon.appspot.com/UA-109817251-12/go-kit/readme?pixel)](https://github.com/kamilsk/go-kit/)
-> Kit written on Go.
-> > My collection of small [Go](https://golang.org) tools.
+> Kit is written on Go.
+> > My collection of small [Go](https://golang.org) packages and tools.
 
 [![Patreon](https://img.shields.io/badge/patreon-donate-orange.svg)](https://www.patreon.com/octolab)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
