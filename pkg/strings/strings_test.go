@@ -1,9 +1,10 @@
 package strings_test
 
 import (
+	"strings"
 	"testing"
 
-	"github.com/kamilsk/go-kit/pkg/strings"
+	. "github.com/kamilsk/go-kit/pkg/strings"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -20,7 +21,7 @@ func TestConcat(t *testing.T) {
 	for _, test := range tests {
 		tc := test
 		t.Run(test.name, func(t *testing.T) {
-			assert.Equal(t, tc.expected, strings.Concat(tc.strings...))
+			assert.Equal(t, tc.expected, Concat(tc.strings...))
 		})
 	}
 }
@@ -38,14 +39,22 @@ func TestFirst(t *testing.T) {
 	for _, test := range tests {
 		tc := test
 		t.Run(test.name, func(t *testing.T) {
-			assert.Equal(t, tc.expected, strings.First(tc.strings...))
+			assert.Equal(t, tc.expected, First(tc.strings...))
 		})
 	}
 }
 
 func BenchmarkConcat(b *testing.B) {
-	b.ReportAllocs()
-	for i := 0; i < b.N; i++ {
-		strings.Concat("127.0.0.1", ":", "80")
-	}
+	b.Run("concat", func(b *testing.B) {
+		b.ReportAllocs()
+		for i := 0; i < b.N; i++ {
+			Concat("127.0.0.1", ":", "80")
+		}
+	})
+	b.Run("join", func(b *testing.B) {
+		b.ReportAllocs()
+		for i := 0; i < b.N; i++ {
+			strings.Join([]string{"127.0.0.1", ":", "80"}, "")
+		}
+	})
 }
